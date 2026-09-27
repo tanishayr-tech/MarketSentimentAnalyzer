@@ -42,8 +42,7 @@ public class DatabaseConnection {
 
                 System.out.println("Source: " +
                         resultSet.getString("source"));
-
-                System.out.println("Company: " +
+ System.out.println("Company: " +
               
                         resultSet.getString("company"));
 

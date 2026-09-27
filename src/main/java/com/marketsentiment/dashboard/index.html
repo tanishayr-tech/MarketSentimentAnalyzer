@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Market Sentiment Analyzer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <h1>📊 Market Sentiment Analyzer</h1>
+
+            <p>
+                Analyze financial news and understand market sentiment
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container">
+
+
+        <!-- ================= DASHBOARD SUMMARY ================= -->
+
+        <section class="dashboard-section">
+
+            <h2>Market Overview</h2>
+
+
+            <div class="summary-cards">
+
+
+                <!-- POSITIVE -->
+
+                <div class="summary-card positive-card">
+
+                    <div class="card-icon">
+                        📈
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Positive</h3>
+
+                        <p id="positiveCount">
+                            0
+                        </p>
+
+                        <span id="positivePercentage">
+                            0%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEGATIVE -->
+
+                <div class="summary-card negative-card">
+
+                    <div class="card-icon">
+                        📉
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Negative</h3>
+
+                        <p id="negativeCount">
+                            0
+                        </p>
+
+                        <span id="negativePercentage">
+                            0%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEUTRAL -->
+
+                <div class="summary-card neutral-card">
+
+                    <div class="card-icon">
+                        ➖
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Neutral</h3>
+
+                        <p id="neutralCount">
+                            0
+                        </p>
+
+                        <span id="neutralPercentage">
+                            0%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OVERALL TREND -->
+
+                <div class="summary-card trend-card">
+
+                    <div class="card-icon">
+                        📊
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Overall Trend</h3>
+
+                        <p id="overallTrend">
+                            -
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SENTIMENT CHART ================= -->
+
+        <section class="chart-section">
+
+            <h2>Sentiment Distribution</h2>
+
+            <div class="chart-container">
+
+                <canvas id="sentimentChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ANALYZE NEW HEADLINE ================= -->
+
+        <section class="analyzer-section">
+
+            <h2>🔍 Analyze New Headline</h2>
+
+            <p class="analyzer-description">
+
+                Enter a market news headline to analyze its sentiment
+                using our rule-based sentiment analyzer.
+
+            </p>
+
+
+            <div class="analyzer-box">
+
+                <input
+                    type="text"
+                    id="headlineInput"
+                    placeholder="Example: TCS reports strong quarterly profit"
+                    autocomplete="off"
+                >
+
+                <button
+                    id="analyzeButton"
+                    type="button"
+                >
+                    Analyze Sentiment
+                </button>
+
+            </div>
+
+
+            <!-- Loading message -->
+
+            <div
+                id="analysisLoading"
+                class="analysis-loading"
+                style="display: none;"
+            >
+                Analyzing headline...
+            </div>
+
+
+            <!-- Result -->
+
+            <div
+                id="analysisResult"
+                class="analysis-result"
+            ></div>
+
+        </section>
+
+
+
+        <!-- ================= LATEST NEWS ================= -->
+
+        <section class="news-section">
+
+            <div class="news-header">
+
+                <div>
+
+                    <h2>
+                        Latest Market News
+                    </h2>
+
+                    <p>
+                        Real-time sentiment analysis of financial news
+                    </p>
+
+                </div>
+
+
+                <!-- Controls -->
+
+                <div class="news-controls">
+
+                    <select
+                        id="companyFilter"
+                    >
+
+                        <option value="ALL">
+                            All Companies
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        id="refreshButton"
+                        type="button"
+                    >
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Loading -->
+
+            <div
+                id="loadingMessage"
+                class="loading"
+            >
+                Loading market news...
+            </div>
+
+
+            <!-- News cards -->
+
+            <div
+                id="newsContainer"
+                class="news-container"
+            ></div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            Market Sentiment Analyzer
+        </p>
+
+        <p>
+            Java • MySQL • HTML • CSS • JavaScript
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

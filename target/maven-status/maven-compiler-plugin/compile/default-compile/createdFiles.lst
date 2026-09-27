@@ -1,0 +1,6 @@
+com\marketsentiment\SentimentAnalyzer.class
+com\marketsentiment\TrendAnalyzer.class
+com\marketsentiment\CoreNLPSentimentAnalyzer.class
+com\marketsentiment\DatabaseConnection.class
+com\marketsentiment\NewsAPI.class
+com\marketsentiment\NewsSentimentAnalyzer.class
